@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-light responsive-text">
+    <header class="text-center">
+        <div class="container-fluid bg-secondary text-center p-4">
+            <span class=" text-white display-3 font-weight-bold" style="font-size: calc(20px + 3.5vw)">Calculadora de sistema de ecuaciones </span>
+        </div>
+        <div class="container text-white p-3 my-3 bg-dark shadow rounded">
+            <span class="display-3 font-weight-normal" style="font-size: calc(20px + 3vw)">Ingresa la matriz</span>
+        </div>
+    </header>
+    <div class="container" style="margin-top: 2%;" >
+        <form action="">
+            <div class="row shadow rounded">
+                <div class="col-sm-12 col-lg-6 p-4 my-4 ">
+                    <div class="container " style="padding-left: unset;">
+                        <div class="container p-2 my-2 mx d-flex justify-content-center">
+                            <input type="text" class="form-control border-bottom border-primary  m-2 p-2" id="00">
+                            <p class="mt-3">x</p>
+                            <input type="text" class="form-control border-bottom border-primary  m-2 p-2" id="01">
+                            <p class="mt-3">y</p>
+                            <input type="text" class="form-control border-bottom border-primary  m-2 p-2" id="02">
+                            <p class="mt-3">z=</p>
+                            <input type="text" class="form-control border-bottom border-primary  m-2 p-2" id="r1">
+                        </div>
+                        <div class="container p-2 my-2 mx  d-flex justify-content-center">
+                            <input type="text" class="form-control border-bottom border-primary  m-2 p-2" id="10">
+                            <p class="mt-3">x</p>
+                            <input type="text" class="form-control border-bottom border-primary  m-2 p-2" id="11">
+                            <p class="mt-3">y</p>
+                            <input type="text" class="form-control border-bottom border-primary  m-2 p-2" id="12">
+                            <p class="mt-3">z=</p>
+                            <input type="text" class="form-control border-bottom border-primary  m-2 p-2" id="r2">
+                        </div>
+                        <div class="container p-2 my-2 mx  d-flex justify-content-center">
+                            <input type="text" class="form-control border-bottom border-primary  m-2 p-2" id="20">
+                            <p class="mt-3">x</p>
+                            <input type="text" class="form-control border-bottom border-primary  m-2 p-2" id="21">
+                            <p class="mt-3">y</p>
+                            <input type="text" class="form-control border-bottom border-primary  m-2 p-2" id="22">
+                            <p class="mt-3">z=</p>
+                            <input type="text" class="form-control border-bottom border-primary  m-2 p-2" id="r3">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-6 container text-center p-3">
+                    <h3 style="font-size: calc(30px + 0.7vw);">¿Qué método utilizaras?</h3>
+                    <select type="dropdown" id="select" class="form-control w-75 my-4" style="font-size: 20px; width: 50%; margin-left: 15%;">
+                        <option value="">Selecciona alguno</option>
+                        <!-- <option value="1">Gauss</option>
+                        <option value="2">Gauss-jordan</option> -->
+                        <option value="3">Gauss-Seidel</option>
+                    </select>
+                    <div class="container">
+                        <button class="btn btn-block btn-primary p-3" id="boton" type="button"><h3>Resolución</h3></button>
+                        <button class="btn btn-block btn-danger p-3" type="reset"><h3>Limpiar</h3></button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <section id="sect">
+    </section>
+</body>
+<script src="/index.js"></script> 
+</html>
