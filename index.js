@@ -19,6 +19,47 @@ function set_eqs() {
     
 }
 
+function jacobi(){
+     n = A.length;
+     l = A[0].length;
+     var i,j;
+    if(n!=l){
+        System.out.println("A no es una matriz cuadrada.");
+        return new double[0];
+    }else{
+        x = new double[n];
+        aux;
+        cont=0;
+        E= t+1;
+        while(E>t && cont<=iter){
+            E=0;
+            for(i=0;i<n;i++){
+                suma=0;
+                for ( j=0;j<n; j++){
+                    if (i!=j){
+                        suma=suma+A[i][j]*x0[j];
+                    }
+                }
+                x[i] = (b[i] - suma)/A[i][i];
+                aux = x[i]-x0[i];
+                E = E + Math.pow(aux,2);
+            }
+            E=Math.pow(E,0.5);
+            for (i=0;i<n;i++){
+                x0[i] = x[i];
+            }
+            cont=cont++;
+        }
+        if(E<t){
+            return x;
+        }
+        else{
+            System.out.println("no se llegó a la solución en "+iter+" iteraciones");
+            return new double[0];
+        }
+    }
+}
+
 function gauss_sindel(){
     //Valida si la diagonal es dominante
     if ((Math.abs(eq1[0]) > Math.abs(eq1[1])) && (Math.abs(eq1[0]) > Math.abs(eq1[2])) && (Math.abs(eq2[1]) > Math.abs(eq2[0])) && (Math.abs(eq2[1]) > Math.abs(eq2[2])) && (Math.abs(eq3[2]) > Math.abs(eq3[1])) && (Math.abs(eq3[2]) > Math.abs(eq3[0]))){
@@ -41,7 +82,7 @@ boton.addEventListener('click',() => {
     if (select.value == 1){
     }
     else if (select.value == 2){
-
+        jacobi();
     }
     else{
         gauss_sindel();
